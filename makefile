@@ -12,6 +12,7 @@ composer-update:
 	docker exec laravel-docker-app bash -c "composer update"
 data:
 	docker exec laravel-docker-app bash -c "php artisan storage:link"
+	docker exec laravel-docker-app bash -c "php artisan key:generate"
 	docker exec laravel-docker-app bash -c "php artisan migrate"
 	docker exec laravel-docker-app bash -c "php artisan db:seed"
 migrate-fresh:
